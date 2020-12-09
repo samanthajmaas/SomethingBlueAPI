@@ -47,15 +47,6 @@ class Brides(ViewSet):
                 {'message': 'User does not exist.'},
                 status=status.HTTP_400_BAD_REQUEST)
 
-    # @action(methods=['get'], detail=False)
-    # def posts(self, request):
-    #     rareuser = RareUser.objects.get(user=request.auth.user)
-    #     posts = Post.objects.filter(rareuser=rareuser)
-
-    #     serializer = PostSerializer(posts, many=True, context={'request': request})
-
-    #     return Response(serializer.data)
-
     @action(methods=['get'], detail=False)
     def current_user(self, request):
         current_user = request.auth.user
