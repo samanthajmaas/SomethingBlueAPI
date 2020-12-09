@@ -1,0 +1,10 @@
+[
+    {
+        "model": "somethingblueapi.bride",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "profile_image_url":""
+        }
+    }
+]
