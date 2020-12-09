@@ -1,0 +1,251 @@
+[
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 1,
+        "fields": {
+            "toDo": "Start a Vision Board",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 2,
+        "fields": {
+            "toDo": "Choose wedding colors/theme",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 3,
+        "fields": {
+            "toDo": "Search specific venues for ceremony/reception",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 4,
+        "fields": {
+            "toDo": "Estimate guest count",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 5,
+        "fields": {
+            "toDo": "Get engagement photos taken",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 6,
+        "fields": {
+            "toDo": "Research photographers",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 7,
+        "fields": {
+            "toDo": "Choose wedding party",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 8,
+        "fields": {
+            "toDo": "Book a photographer",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 9,
+        "fields": {
+            "toDo": "Meet with caterers",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 10,
+        "fields": {
+            "toDo": "Order save-the-dates",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 11,
+        "fields": {
+            "toDo": "Start trying on dresses",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 12,
+        "fields": {
+            "toDo": "Start registries",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 13,
+        "fields": {
+            "toDo": "Order your dress and accessories",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 14,
+        "fields": {
+            "toDo": "Research florists",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 15,
+        "fields": {
+            "toDo": "Research bands and DJs",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 16,
+        "fields": {
+            "toDo": "Book your florist",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 17,
+        "fields": {
+            "toDo": "Book your caterer",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 18,
+        "fields": {
+            "toDo": "Decide on bouquet and other flowers",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 19,
+        "fields": {
+            "toDo": "Research videographers",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 20,
+        "fields": {
+            "toDo": "Reasearch cake bakers",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 21,
+        "fields": {
+            "toDo": "Book your band or DJ",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 22,
+        "fields": {
+            "toDo": "Book videographer",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 23,
+        "fields": {
+            "toDo": "List out potential honeymoon ideas",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 24,
+        "fields": {
+            "toDo": "Schedule Premarital Counseling",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 25,
+        "fields": {
+            "toDo": "Book your cake maker",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 26,
+        "fields": {
+            "toDo": "Start looking at bridesmaids dresses",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 27,
+        "fields": {
+            "toDo": "Schedule your alterations appointments",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 28,
+        "fields": {
+            "toDo": "Order partner's attire",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 29,
+        "fields": {
+            "toDo": "Look into reception extras",
+            "default": true
+        }
+    },
+    
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 30,
+        "fields": {
+            "toDo": "Book honeymoon",
+            "default": true
+        }
+    }
+    
+]
