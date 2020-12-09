@@ -1,0 +1,1 @@
+from .bride import Bride
