@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MinValueValidator
+from .bride import Bride
 
 class Wedding(models.Model):
     """Wedding Model"""

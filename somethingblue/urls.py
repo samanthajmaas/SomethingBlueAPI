@@ -4,9 +4,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
+from somethingblueapi.models import *
+from somethingblueapi.views import *
+
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'users', Users, 'user')
+router.register(r'brides', Brides, 'bride')
+router.register(r'weddings', Weddings, 'wedding')
+
 
 urlpatterns = [
     path('', include(router.urls)),
