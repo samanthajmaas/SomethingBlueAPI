@@ -7,10 +7,6 @@ class Bride(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     @property
-    def username(self):
-        return self.user.username
-
-    @property
     def is_current_user(self):
         return self.__is_current_user
 
