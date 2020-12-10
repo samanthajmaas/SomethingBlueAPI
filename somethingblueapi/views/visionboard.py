@@ -10,7 +10,7 @@ import uuid
 import base64
 from django.core.files.base import ContentFile
 from somethingblueapi.models import VisionBoard, Wedding, Bride
-from somethingblueapi.views.wedding import WeddingSerializer
+
 
 
 class VisionBoards(ViewSet):
@@ -39,56 +39,42 @@ class VisionBoards(ViewSet):
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
-        """Handle GET request for single wedding
-        Returns:
-            Response JSON serialized wedding instance
-        """
+        """Handle GET request for single vision board image"""
         try:
-            wedding = Wedding.objects.get(pk=pk)
-            serializer = WeddingSerializer(wedding, context={'request': request})
+            image = VisionBoard.objects.get(pk=pk)
+            serializer = VisionBoardSerializer(image, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
 
-    def update(self, request, pk=None):
-        """Handle PUT requests for weddings"""
-
-        bride = Bride.objects.get(user=request.auth.user)
-
-        wedding = Wedding.objects.get(pk=pk)
-        wedding.event_date = request.data["event_date"]
-        wedding.location = request.data["location"]
-        wedding.budget = request.data["budget"]
-        wedding.bride = bride
-
-        wedding.save()
-
-        serializer = WeddingSerializer(post, context={'request': request})
-        
-        return Response({}, status=status.HTTP_204_NO_CONTENT)
-
     def destroy(self, request, pk=None):
-        """Handle DELETE requests for a wedding
-        Returns:
-            Response -- 200, 404, or 500 status code
-        """
+        """Handle DELETE requests for an image"""
         try:
-            wedding = Wedding.objects.get(pk=pk)
-            wedding.delete()
+            image = VisionBoard.objects.get(pk=pk)
+            image.delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 
-        except Wedding.DoesNotExist as ex:
+        except VisionBoard.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+    def list (self, request):
+        """Handles get request for images for logged in user"""
+        images = VisionBoard.objects.all()
 
-"""Basic Serializer for wedding"""
+        wedding = self.request.query_params.get('wedding', None)
+
+        if wedding is not None:
+            images = images.filter(wedding = wedding)
+
+        serializer = VisionBoardSerializer(images, many=True, context={'request': request})
+        return Response(serializer.data)
+
 class VisionBoardSerializer(serializers.ModelSerializer):
-    bride = BrideSerializer(many=False)
 
     class Meta:
-        model = Wedding
-        fields = ('id', 'bride', 'event_date', 'location', 'budget')
-        depth = 1
+        model = VisionBoard
+        fields = ('id', 'vb_img', 'wedding')
