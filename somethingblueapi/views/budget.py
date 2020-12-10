@@ -9,7 +9,7 @@ from django.utils import timezone
 import uuid
 import base64
 from django.core.files.base import ContentFile
-from somethingblueapi.models import Wedding, BudgetItem, WeddingBudget
+from somethingblueapi.models import Wedding, BudgetItem, WeddingBudget, Bride
 from somethingblueapi.views.wedding import WeddingSerializer
 
 class Budgets(ViewSet):
@@ -22,8 +22,9 @@ class Budgets(ViewSet):
             item.save()
             serializer = BudgetItemSerializer(item, context={'request': request})
 
-            wedding_id = self.request.query_params.get('wedding', None)
-            wedding = Wedding.objects.get(pk=wedding_id)
+            bride = Bride.objects.get(user=request.auth.user)
+            wedding = Wedding.objects.get(bride=bride)
+            
             wedding_budget = WeddingBudget()
             wedding_budget.wedding = wedding
             wedding_budget.budget_item = int(serializer.data["id"])

@@ -9,7 +9,7 @@ from django.utils import timezone
 import uuid
 import base64
 from django.core.files.base import ContentFile
-from somethingblueapi.models import Wedding, ChecklistItem, WeddingChecklist
+from somethingblueapi.models import Wedding, ChecklistItem, WeddingChecklist, Bride
 from somethingblueapi.views.wedding import WeddingSerializer
 
 class Checklists(ViewSet):
@@ -22,8 +22,9 @@ class Checklists(ViewSet):
             item.save()
             serializer = ChecklistItemSerializer(item, context={'request': request})
 
-            wedding_id = self.request.query_params.get('wedding', None)
-            wedding = Wedding.objects.get(pk=wedding_id)
+            bride = Bride.objects.get(user=request.auth.user)
+            wedding = Wedding.objects.get(bride=bride)
+
             wedding_checklist = WeddingChecklist()
             wedding_checklist.wedding = wedding
             wedding_checklist.checklist_item = int(serializer.data["id"])

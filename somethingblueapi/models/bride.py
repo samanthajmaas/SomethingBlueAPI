@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Bride(models.Model):
     """Bride Model"""
-    profile_image_url = models.ImageField(upload_to="images/", blank='true', null='true')
+    profile_image_url = models.ImageField(upload_to="profile_img/", blank='true', null='true')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     @property

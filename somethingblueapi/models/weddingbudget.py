@@ -10,5 +10,5 @@ class WeddingBudget(models.Model):
     actual_cost = models.FloatField()
     paid = models.BooleanField()
     proof_img = models.ImageField(
-        upload_to='', height_field=None,
+        upload_to='budgetproofs/', height_field=None,
         width_field=None, max_length=None, null=True)
