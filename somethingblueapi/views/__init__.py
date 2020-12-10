@@ -2,4 +2,4 @@ from .auth import login_user
 from .auth import register_user
 from .bride import Brides
 from .wedding import Weddings
-from .checklistitems import CheckListItems
+from .checklist import Checklists
