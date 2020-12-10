@@ -11,6 +11,7 @@ from somethingblueapi.views import *
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'brides', Brides, 'bride')
 router.register(r'weddings', Weddings, 'wedding')
+router.register(r'checklistitems', CheckListItems, 'checklistItem')
 
 
 urlpatterns = [

@@ -42,7 +42,7 @@ class CheckListItems(ViewSet):
     def list(self, request):
         """Handles GET request for all checklist items """
 
-        items = ChecklistItem.object.all()
+        items = ChecklistItem.objects.all()
 
         serializer = ChecklistItemSerializer(items, many=True, context={'request': request})
         return Response(serializer.data)
@@ -50,5 +50,5 @@ class CheckListItems(ViewSet):
 """Basic Serializer for wedding"""
 class ChecklistItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Wedding
+        model = ChecklistItem
         fields = ('id', 'toDo', 'default')

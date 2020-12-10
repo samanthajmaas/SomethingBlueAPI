@@ -1,6 +1,6 @@
 [
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 1,
         "fields": {
             "toDo": "Start a Vision Board",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 2,
         "fields": {
             "toDo": "Choose wedding colors/theme",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 3,
         "fields": {
             "toDo": "Search specific venues for ceremony/reception",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 4,
         "fields": {
             "toDo": "Estimate guest count",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 5,
         "fields": {
             "toDo": "Get engagement photos taken",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 6,
         "fields": {
             "toDo": "Research photographers",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 7,
         "fields": {
             "toDo": "Choose wedding party",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 8,
         "fields": {
             "toDo": "Book a photographer",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 9,
         "fields": {
             "toDo": "Meet with caterers",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 10,
         "fields": {
             "toDo": "Order and send save-the-dates",
@@ -80,7 +80,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 11,
         "fields": {
             "toDo": "Start trying on dresses",
@@ -88,7 +88,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 12,
         "fields": {
             "toDo": "Start registries",
@@ -96,7 +96,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 13,
         "fields": {
             "toDo": "Order your dress and accessories",
@@ -104,7 +104,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 14,
         "fields": {
             "toDo": "Research florists",
@@ -112,7 +112,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 15,
         "fields": {
             "toDo": "Research bands and DJs",
@@ -120,7 +120,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 16,
         "fields": {
             "toDo": "Book your florist",
@@ -128,7 +128,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 17,
         "fields": {
             "toDo": "Book your caterer",
@@ -136,7 +136,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 18,
         "fields": {
             "toDo": "Decide on bouquet and other flowers",
@@ -144,7 +144,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 19,
         "fields": {
             "toDo": "Research videographers",
@@ -152,7 +152,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 20,
         "fields": {
             "toDo": "Reasearch cake bakers",
@@ -160,7 +160,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 21,
         "fields": {
             "toDo": "Book your band or DJ",
@@ -168,7 +168,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 22,
         "fields": {
             "toDo": "Book videographer",
@@ -177,7 +177,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 23,
         "fields": {
             "toDo": "List out potential honeymoon ideas",
@@ -186,7 +186,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 24,
         "fields": {
             "toDo": "Schedule Premarital Counseling",
@@ -195,7 +195,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 25,
         "fields": {
             "toDo": "Book your cake maker",
@@ -204,7 +204,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 26,
         "fields": {
             "toDo": "Start looking at bridesmaids dresses",
@@ -213,7 +213,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 27,
         "fields": {
             "toDo": "Schedule your alterations appointments",
@@ -222,7 +222,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 28,
         "fields": {
             "toDo": "Order partner's attire",
@@ -231,7 +231,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 29,
         "fields": {
             "toDo": "Look into reception extras",
@@ -240,7 +240,7 @@
     },
     
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 30,
         "fields": {
             "toDo": "Book honeymoon",
@@ -248,7 +248,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 31,
         "fields": {
             "toDo": "Finalize guest list",
@@ -256,7 +256,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 32,
         "fields": {
             "toDo": "Decide on hairstyle and makeup",
@@ -264,7 +264,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 33,
         "fields": {
             "toDo": "Shop for wedding rings",
@@ -272,7 +272,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 34,
         "fields": {
             "toDo": "Decide on wedding favors",
@@ -280,7 +280,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 35,
         "fields": {
             "toDo": "Decide and purchase ceremony decorations",
@@ -288,7 +288,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 36,
         "fields": {
             "toDo": "Book transportation",
@@ -296,7 +296,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 37,
         "fields": {
             "toDo": "Pick out wedding invitations",
@@ -304,7 +304,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 38,
         "fields": {
             "toDo": "Decide on gifts for wedding party",
@@ -312,7 +312,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 39,
         "fields": {
             "toDo": "Finalize food and drink menus",
@@ -320,7 +320,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 40,
         "fields": {
             "toDo": "Send out invitations",
@@ -328,7 +328,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 41,
         "fields": {
             "toDo": "Plan bachelor and bachelorette parties",
@@ -336,7 +336,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 42,
         "fields": {
             "toDo": "Create seating chart",
@@ -344,7 +344,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 43,
         "fields": {
             "toDo": "Choose ceremony programs",
@@ -352,7 +352,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 44,
         "fields": {
             "toDo": "Plan outfit for rehearsal",
@@ -360,7 +360,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 45,
         "fields": {
             "toDo": "Get practice hair and makeup done",
@@ -368,7 +368,7 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
+        "model": "somethingblueapi.checklistitem",
         "pk": 46,
         "fields": {
             "toDo": "Confirm all payments with vendors",
@@ -376,40 +376,40 @@
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
-        "pk": 46,
+        "model": "somethingblueapi.checklistitem",
+        "pk": 47,
         "fields": {
             "toDo": "Finalize day schedule",
             "default": true
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
-        "pk": 47,
+        "model": "somethingblueapi.checklistitem",
+        "pk": 48,
         "fields": {
             "toDo": "Pack for honeymoon",
             "default": true
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
-        "pk": 48,
+        "model": "somethingblueapi.checklistitem",
+        "pk": 49,
         "fields": {
             "toDo": "GET MARRIED!",
             "default": true
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
-        "pk": 49,
+        "model": "somethingblueapi.checklistitem",
+        "pk": 50,
         "fields": {
             "toDo": "Send thank-yous",
             "default": true
         }
     },
     {
-        "model": "somethingblueapi.checklistitems",
-        "pk": 50,
+        "model": "somethingblueapi.checklistitem",
+        "pk": 51,
         "fields": {
             "toDo": "Change your name",
             "default": true
