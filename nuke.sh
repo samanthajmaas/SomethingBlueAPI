@@ -13,3 +13,4 @@ python manage.py loaddata weddingchecklists
 python manage.py loaddata budgetitems
 python manage.py loaddata weddingbudgets
 python manage.py loaddata visionboards
+python manage.py loaddata guests

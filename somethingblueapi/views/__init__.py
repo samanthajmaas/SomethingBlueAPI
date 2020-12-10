@@ -5,3 +5,4 @@ from .wedding import Weddings
 from .checklist import Checklists
 from .budget import Budgets
 from .visionboard import VisionBoards
+from .guest import Guests

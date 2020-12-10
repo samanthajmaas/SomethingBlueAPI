@@ -14,6 +14,7 @@ router.register(r'weddings', Weddings, 'wedding')
 router.register(r'checklist', Checklists, 'weddingchecklist')
 router.register(r'budget', Budgets, 'weddingbudget')
 router.register(r'visionboard', VisionBoards, 'visionboard')
+router.register(r'guests', Guests, 'guest')
 
 
 urlpatterns = [

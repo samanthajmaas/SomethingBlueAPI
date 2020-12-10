@@ -5,3 +5,4 @@ from .weddingchecklist import WeddingChecklist
 from .budgetitem import BudgetItem
 from .weddingbudget import WeddingBudget
 from .visionboard import VisionBoard
+from .guest import Guest
