@@ -1,0 +1,41 @@
+[
+    {
+        "model": "somethingblueapi.guest",
+        "pk": 1,
+        "fields": {
+            "wedding": 1,
+            "guest_first_name": "Dale",
+            "guest_last_name": "Riffell",
+            "address": "508 W. Main St. Anna Oh 45302",
+            "phone_number": "937-638-7061",
+            "number_of_guests_in_party": 2,
+            "rsvp_status": "attending"
+        }
+    },
+    {
+        "model": "somethingblueapi.guest",
+        "pk": 2,
+        "fields": {
+            "wedding": 1,
+            "guest_first_name": "Robert",
+            "guest_last_name": "Maas",
+            "address": "144, Pear St. St Marys OH 45778",
+            "phone_number": "937-394-9027",
+            "number_of_guests_in_party": 2,
+            "rsvp_status": "attending"
+        }
+    },
+    {
+        "model": "somethingblueapi.guest",
+        "pk": 3,
+        "fields": {
+            "wedding": 1,
+            "guest_first_name": "Rachell",
+            "guest_last_name": "Kozlowski",
+            "address": "138 Perry Dr. Muncie IN 45704",
+            "phone_number": "678-930-5869",
+            "number_of_guests_in_party": 2,
+            "rsvp_status": "invited"
+        }
+    }
+]
