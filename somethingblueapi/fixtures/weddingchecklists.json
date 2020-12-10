@@ -1,0 +1,29 @@
+[
+    {
+        "model": "somethingblueapi.weddingchecklist",
+        "pk": 1,
+        "fields": {
+            "wedding": 1,
+            "checklist_item": 1,
+            "completed_date": "2020-11-20"
+        }
+    },
+    {
+        "model": "somethingblueapi.weddingchecklist",
+        "pk": 2,
+        "fields": {
+            "wedding": 1,
+            "checklist_item": 2,
+            "completed_date": "2020-11-23"
+        }
+    },
+    {
+        "model": "somethingblueapi.weddingchecklist",
+        "pk": 3,
+        "fields": {
+            "wedding": 1,
+            "checklist_item": 3,
+            "completed_date": "2020-11-27"
+        }
+    }
+]
