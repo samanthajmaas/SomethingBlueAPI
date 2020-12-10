@@ -12,6 +12,7 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'brides', Brides, 'bride')
 router.register(r'weddings', Weddings, 'wedding')
 router.register(r'checklist', Checklists, 'weddingchecklist')
+router.register(r'budget', Budgets, 'weddingbudget')
 
 
 urlpatterns = [

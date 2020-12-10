@@ -3,3 +3,4 @@ from .auth import register_user
 from .bride import Brides
 from .wedding import Weddings
 from .checklist import Checklists
+from .budget import Budgets
