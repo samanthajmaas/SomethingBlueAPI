@@ -75,7 +75,7 @@
         "model": "somethingblueapi.checklistitems",
         "pk": 10,
         "fields": {
-            "toDo": "Order save-the-dates",
+            "toDo": "Order and send save-the-dates",
             "default": true
         }
     },
@@ -244,6 +244,174 @@
         "pk": 30,
         "fields": {
             "toDo": "Book honeymoon",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 31,
+        "fields": {
+            "toDo": "Finalize guest list",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 32,
+        "fields": {
+            "toDo": "Decide on hairstyle and makeup",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 33,
+        "fields": {
+            "toDo": "Shop for wedding rings",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 34,
+        "fields": {
+            "toDo": "Decide on wedding favors",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 35,
+        "fields": {
+            "toDo": "Decide and purchase ceremony decorations",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 36,
+        "fields": {
+            "toDo": "Book transportation",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 37,
+        "fields": {
+            "toDo": "Pick out wedding invitations",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 38,
+        "fields": {
+            "toDo": "Decide on gifts for wedding party",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 39,
+        "fields": {
+            "toDo": "Finalize food and drink menus",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 40,
+        "fields": {
+            "toDo": "Send out invitations",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 41,
+        "fields": {
+            "toDo": "Plan bachelor and bachelorette parties",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 42,
+        "fields": {
+            "toDo": "Create seating chart",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 43,
+        "fields": {
+            "toDo": "Choose ceremony programs",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 44,
+        "fields": {
+            "toDo": "Plan outfit for rehearsal",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 45,
+        "fields": {
+            "toDo": "Get practice hair and makeup done",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 46,
+        "fields": {
+            "toDo": "Confirm all payments with vendors",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 46,
+        "fields": {
+            "toDo": "Finalize day schedule",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 47,
+        "fields": {
+            "toDo": "Pack for honeymoon",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 48,
+        "fields": {
+            "toDo": "GET MARRIED!",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 49,
+        "fields": {
+            "toDo": "Send thank-yous",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.checklistitems",
+        "pk": 50,
+        "fields": {
+            "toDo": "Change your name",
             "default": true
         }
     }

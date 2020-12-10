@@ -8,3 +8,4 @@ python manage.py loaddata users
 python manage.py loaddata tokens
 python manage.py loaddata brides
 python manage.py loaddata weddings
+python manage.py loaddata checklistitems
