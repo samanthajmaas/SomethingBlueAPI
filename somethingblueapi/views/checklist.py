@@ -59,6 +59,16 @@ class Checklists(ViewSet):
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def update(self, request, pk=None):
+        """Handles updating a wedding checklist"""
+        wedding_checklist = WeddingChecklist.objects.get(pk=pk)
+        
+        wedding_checklist.completed_date = request.data["completed_date"]
+
+        wedding_checklist.save()
+        serializer = WeddingChecklistSerializer(wedding_checklist, context={'request': request})
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
     
     def list(self, request):
         """handles getting a list of all checklist items special to a wedding"""

@@ -68,6 +68,23 @@ class Budgets(ViewSet):
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def update(self, request, pk=None):
+        """Handles updating a wedding budget"""
+        wedding_budget = WeddingBudget.objects.get(pk=pk)
+        wedding_budget.budget_item = int(serializer.data["id"])
+        wedding_budget.estimated_cost = request.data["estimated_cost"]
+        wedding_budget.actual_cost = request.data["actual_cost"]
+        wedding_budget.paid = request.data["paid"]
+        if "proof_img" in request.data:
+            format, imgstr = request.data["proof_img"].split(';base64,')
+            ext = format.split('/')[-1]
+            data = ContentFile(base64.b64decode(imgstr), name=f'{proof_img}-{request.data["name"]}.{ext}')
+
+            wedding_budget.proof_img = data
+        wedding_budget.save()
+        serializer = WeddingBudgetSerializer(wedding_budget, context={'request': request})
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
     
     def list(self, request):
         """handles getting a list of all checklist items special to a wedding"""
