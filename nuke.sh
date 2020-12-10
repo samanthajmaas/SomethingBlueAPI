@@ -10,3 +10,5 @@ python manage.py loaddata brides
 python manage.py loaddata weddings
 python manage.py loaddata checklistitems
 python manage.py loaddata weddingchecklists
+python manage.py loaddata budgetitems
+python manage.py loaddata weddingbudgets

@@ -1,0 +1,145 @@
+[
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 1,
+        "fields": {
+            "save_for": "Cermony Location fee",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 2,
+        "fields": {
+            "save_for": "Photography",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 3,
+        "fields": {
+            "save_for": "Wedding Attire & Alterations",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 4,
+        "fields": {
+            "save_for": "Reception Decorations",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 5,
+        "fields": {
+            "save_for": "Reception Music",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 6,
+        "fields": {
+            "save_for": "Cake and Desserts",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 7,
+        "fields": {
+            "save_for": "Videographer",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 8,
+        "fields": {
+            "save_for": "Honeymoon",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 9,
+        "fields": {
+            "save_for": "Officiant Fee",
+            "default": true
+        }
+    },{
+        "model": "somethingblueapi.budgetitem",
+        "pk": 10,
+        "fields": {
+            "save_for": "Car Rentals",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 11,
+        "fields": {
+            "save_for": "Favors",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 12,
+        "fields": {
+            "save_for": "Gifts",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 13,
+        "fields": {
+            "save_for": "Catering",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 14,
+        "fields": {
+            "save_for": "Drinks",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 15,
+        "fields": {
+            "save_for": "Save-the-Dates",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 16,
+        "fields": {
+            "save_for": "Invitations and Programs",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 17,
+        "fields": {
+            "save_for": "Floral arrangements",
+            "default": true
+        }
+    },
+    {
+        "model": "somethingblueapi.budgetitem",
+        "pk": 18,
+        "fields": {
+            "save_for": "Ceremony Decorations",
+            "default": true
+        }
+    }
+]

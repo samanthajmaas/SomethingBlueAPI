@@ -12,7 +12,6 @@ from django.core.files.base import ContentFile
 from somethingblueapi.models import Wedding, ChecklistItem, WeddingChecklist
 from somethingblueapi.views.wedding import WeddingSerializer
 
-
 class Checklists(ViewSet):
     def create(self, request):
         """Handle POST operations for check list items for a wedding"""
