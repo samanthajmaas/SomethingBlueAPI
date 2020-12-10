@@ -1,0 +1,42 @@
+[
+    {
+        "model": "somethingblueapi.visionboard",
+        "pk": 1,
+        "fields": {
+            "wedding": 1,
+            "vb_img": "/visionboard/aisle.jpg"
+        }
+    },
+    {
+        "model": "somethingblueapi.visionboard",
+        "pk": 2,
+        "fields": {
+            "wedding": 1,
+            "vb_img": "/visionboard/decoration.jpg"
+        }
+    },
+    {
+        "model": "somethingblueapi.visionboard",
+        "pk": 3,
+        "fields": {
+            "wedding": 1,
+            "vb_img": "/visionboard/dress.jpg"
+        }
+    },
+    {
+        "model": "somethingblueapi.visionboard",
+        "pk": 4,
+        "fields": {
+            "wedding": 1,
+            "vb_img": "/visionboard/floral.jpg"
+        }
+    },
+    {
+        "model": "somethingblueapi.visionboard",
+        "pk": 5,
+        "fields": {
+            "wedding": 1,
+            "vb_img": "/visionboard/van.jpg"
+        }
+    }
+]
