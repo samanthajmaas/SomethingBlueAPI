@@ -31,7 +31,7 @@ def login_user(request):
         # If authentication was successful, respond with true and the users token
         if authenticated_user is not None:
             token = Token.objects.get(user=authenticated_user)
-            rare_user = RareUser.objects.get(user=authenticated_user)
+            bride = Bride.objects.get(user=authenticated_user)
             data = json.dumps({"valid": True, "token": token.key})
             return HttpResponse(data, content_type='application/json')
 
