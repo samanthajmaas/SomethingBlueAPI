@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.files.base import ContentFile
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from somethingblueapi.models import Bride
+from somethingblueapi.models import Bride, Wedding
 
 @csrf_exempt
 def login_user(request):
@@ -69,8 +69,14 @@ def register_user(request):
         profile_image_url = data
     )
 
+    wedding = Wedding.objects.create(
+        bride = bride,
+        event_date = req_body['event_date']
+    )
+
     # save it all to the db
     bride.save()
+    wedding.save()
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
