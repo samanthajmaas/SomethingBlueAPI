@@ -79,6 +79,16 @@ class Weddings(ViewSet):
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    @action(methods=['get'], detail=False)
+    def current_brides_wedding(self, request):
+
+        bride = Bride.objects.get(user=request.auth.user)
+        current_wedding = Wedding.objects.get(bride=bride)
+
+        serializer = WeddingSerializer(current_wedding, context={'request': request})
+
+        return Response(serializer.data)
+
 """Basic Serializer for wedding"""
 class WeddingSerializer(serializers.ModelSerializer):
     bride = BrideSerializer(many=False)
