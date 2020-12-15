@@ -58,7 +58,7 @@ class Weddings(ViewSet):
 
         wedding.save()
 
-        serializer = WeddingSerializer(post, context={'request': request})
+        serializer = WeddingSerializer(wedding, context={'request': request})
         
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 

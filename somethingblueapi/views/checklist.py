@@ -77,7 +77,7 @@ class Checklists(ViewSet):
         wedding = self.request.query_params.get('wedding', None)
 
         if wedding is not None:
-            checklist = checklist.filter(wedding__id=wedding)
+            checklist = checklist.filter(wedding_id=wedding)
 
         serializer = WeddingChecklistSerializer(
             checklist, many=True, context={'request': request})
