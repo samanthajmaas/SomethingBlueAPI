@@ -72,7 +72,8 @@ class Budgets(ViewSet):
         wedding_budget = WeddingBudget.objects.get(pk=pk)
         wedding_budget.estimated_cost = request.data["estimated_cost"]
         wedding_budget.actual_cost = request.data["actual_cost"]
-        # wedding_budget.paid = request.data["paid"]
+        if wedding_budget.actual_cost is not None:
+            wedding_budget.paid = True
         # if "proof_img" in request.data:
         #     format, imgstr = request.data["proof_img"].split(';base64,')
         #     ext = format.split('/')[-1]
