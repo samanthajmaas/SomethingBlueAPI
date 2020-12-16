@@ -11,6 +11,7 @@ import base64
 from django.core.files.base import ContentFile
 from somethingblueapi.models import Wedding, ChecklistItem, WeddingChecklist, Bride
 from somethingblueapi.views.wedding import WeddingSerializer
+from datetime import date
 
 class Checklists(ViewSet):
     def create(self, request):
@@ -20,15 +21,13 @@ class Checklists(ViewSet):
         item.default= False
         try:
             item.save()
-            serializer = ChecklistItemSerializer(item, context={'request': request})
 
             bride = Bride.objects.get(user=request.auth.user)
             wedding = Wedding.objects.get(bride=bride)
 
             wedding_checklist = WeddingChecklist()
             wedding_checklist.wedding = wedding
-            wedding_checklist.checklist_item = int(serializer.data["id"])
-            wedding_checklist.completed_date = ""
+            wedding_checklist.checklist_item = item
 
             wedding_checklist.save()
             weddingSerializer = WeddingChecklistSerializer(wedding_checklist, context={'request': request})
@@ -59,16 +58,6 @@ class Checklists(ViewSet):
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    def update(self, request, pk=None):
-        """Handles updating a wedding checklist"""
-        wedding_checklist = WeddingChecklist.objects.get(pk=pk)
-        
-        wedding_checklist.completed_date = request.data["completed_date"]
-
-        wedding_checklist.save()
-        serializer = WeddingChecklistSerializer(wedding_checklist, context={'request': request})
-        return Response({}, status=status.HTTP_204_NO_CONTENT)
     
     def list(self, request):
         """handles getting a list of all checklist items special to a wedding"""
@@ -82,6 +71,19 @@ class Checklists(ViewSet):
         serializer = WeddingChecklistSerializer(
             checklist, many=True, context={'request': request})
         return Response(serializer.data)
+
+    @action(methods=['put'], detail=True)
+    def complete(self, request, pk=None):
+        """Manage completeing an item and marking it checked"""
+
+        if request.method == 'PUT':
+            item = WeddingChecklist.objects.get(pk=pk)
+            item.completed_date = str(date.today())
+            item.save()
+
+            serializer = WeddingChecklistSerializer(item, context={'request': request})
+            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+
 
 class ChecklistItemSerializer(serializers.ModelSerializer):
     class Meta:
