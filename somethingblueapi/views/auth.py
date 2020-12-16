@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.files.base import ContentFile
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from somethingblueapi.models import Bride, Wedding, ChecklistItem, WeddingChecklist
+from somethingblueapi.models import Bride, Wedding, ChecklistItem, WeddingChecklist, BudgetItem, WeddingBudget
 
 @csrf_exempt
 def login_user(request):
@@ -83,6 +83,14 @@ def register_user(request):
         items_relationship = WeddingChecklist.objects.create(
             wedding= wedding,
             checklist_item= item
+        )
+
+    default_budget_items = BudgetItem.objects.filter(default=True)
+    for budget_item in default_budget_items:
+        budget_relationship = WeddingBudget.objects.create(
+            wedding = wedding,
+            budget_item= budget_item,
+            paid=False
         )
     
 
