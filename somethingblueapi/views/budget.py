@@ -44,15 +44,6 @@ class Budgets(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
-    # def retrieve(self, request, pk=None):
-    #     """Handle GET request for single budget relationship"""
-    #     try:
-    #         item = WeddingBudget.objects.get(pk=pk)
-    #         serializer = WeddingBudgetSerializer(item, context={'request': request})
-    #         return Response(serializer.data)
-    #     except Exception as ex:
-    #         return HttpResponseServerError(ex)
-
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a relationship item"""
         try:
@@ -86,12 +77,10 @@ class Budgets(ViewSet):
     
     def list(self, request):
         """handles getting a list of all checklist items special to a wedding"""
-        budget = WeddingBudget.objects.all()
+        bride = Bride.objects.get(user=request.auth.user)
+        wedding = Wedding.objects.get(bride=bride)
 
-        wedding = self.request.query_params.get('wedding', None)
-
-        if wedding is not None:
-            budget = budget.filter(wedding_id=wedding)
+        budget=WeddingBudget.objects.filter(wedding=wedding)
 
         serializer = WeddingBudgetSerializer(
             budget, many=True, context={'request': request})

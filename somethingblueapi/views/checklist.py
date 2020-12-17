@@ -61,12 +61,11 @@ class Checklists(ViewSet):
     
     def list(self, request):
         """handles getting a list of all checklist items special to a wedding"""
-        checklist = WeddingChecklist.objects.all()
-
-        wedding = self.request.query_params.get('wedding', None)
-
-        if wedding is not None:
-            checklist = checklist.filter(wedding_id=wedding)
+        
+        bride = Bride.objects.get(user=request.auth.user)
+        wedding = Wedding.objects.get(bride=bride)
+        
+        checklist = WeddingChecklist.objects.filter(wedding=wedding)
 
         serializer = WeddingChecklistSerializer(
             checklist, many=True, context={'request': request})

@@ -34,10 +34,7 @@ class Weddings(ViewSet):
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
-        """Handle GET request for single wedding
-        Returns:
-            Response JSON serialized wedding instance
-        """
+        """Handle GET request for single wedding"""
         try:
             wedding = Wedding.objects.get(pk=pk)
             serializer = WeddingSerializer(wedding, context={'request': request})
@@ -63,10 +60,7 @@ class Weddings(ViewSet):
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
-        """Handle DELETE requests for a wedding
-        Returns:
-            Response -- 200, 404, or 500 status code
-        """
+        """Handle DELETE requests for a wedding"""
         try:
             wedding = Wedding.objects.get(pk=pk)
             wedding.delete()
