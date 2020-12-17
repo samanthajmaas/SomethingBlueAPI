@@ -20,23 +20,21 @@ class Budgets(ViewSet):
         item.default= False
         try:
             item.save()
-            serializer = BudgetItemSerializer(item, context={'request': request})
 
             bride = Bride.objects.get(user=request.auth.user)
             wedding = Wedding.objects.get(bride=bride)
             
             wedding_budget = WeddingBudget()
             wedding_budget.wedding = wedding
-            wedding_budget.budget_item = int(serializer.data["id"])
+            wedding_budget.budget_item = item
             wedding_budget.estimated_cost = request.data["estimated_cost"]
-            wedding_budget.actual_cost = request.data["actual_cost"]
-            wedding_budget.paid = request.data["paid"]
-            if "proof_img" in request.data:
-                format, imgstr = request.data["proof_img"].split(';base64,')
-                ext = format.split('/')[-1]
-                data = ContentFile(base64.b64decode(imgstr), name=f'{proof_img}-{request.data["name"]}.{ext}')
+            wedding_budget.paid = False
+            # if "proof_img" in request.data:
+            #     format, imgstr = request.data["proof_img"].split(';base64,')
+            #     ext = format.split('/')[-1]
+            #     data = ContentFile(base64.b64decode(imgstr), name=f'{proof_img}-{request.data["name"]}.{ext}')
 
-                wedding_budget.proof_img = data
+            #     wedding_budget.proof_img = data
 
 
             wedding_budget.save()
@@ -45,15 +43,6 @@ class Budgets(ViewSet):
 
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
-
-    def retrieve(self, request, pk=None):
-        """Handle GET request for single budget relationship"""
-        try:
-            item = WeddingBudget.objects.get(pk=pk)
-            serializer = WeddingBudgetSerializer(item, context={'request': request})
-            return Response(serializer.data)
-        except Exception as ex:
-            return HttpResponseServerError(ex)
 
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a relationship item"""
@@ -68,15 +57,30 @@ class Budgets(ViewSet):
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def update(self, request, pk=None):
+        """Handles updating a wedding budget"""
+        wedding_budget = WeddingBudget.objects.get(pk=pk)
+        wedding_budget.estimated_cost = request.data["estimated_cost"]
+        wedding_budget.actual_cost = request.data["actual_cost"]
+        if wedding_budget.actual_cost is not None:
+            wedding_budget.paid = True
+        # if "proof_img" in request.data:
+        #     format, imgstr = request.data["proof_img"].split(';base64,')
+        #     ext = format.split('/')[-1]
+        #     data = ContentFile(base64.b64decode(imgstr), name=f'{proof_img}-{request.data["name"]}.{ext}')
+
+        #     wedding_budget.proof_img = data
+        wedding_budget.save()
+        serializer = WeddingBudgetSerializer(wedding_budget, context={'request': request})
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
     
     def list(self, request):
         """handles getting a list of all checklist items special to a wedding"""
-        budget = WeddingBudget.objects.all()
+        bride = Bride.objects.get(user=request.auth.user)
+        wedding = Wedding.objects.get(bride=bride)
 
-        wedding = self.request.query_params.get('wedding', None)
-
-        if wedding is not None:
-            budget = budget.filter(wedding__id=wedding)
+        budget=WeddingBudget.objects.filter(wedding=wedding)
 
         serializer = WeddingBudgetSerializer(
             budget, many=True, context={'request': request})
@@ -93,6 +97,6 @@ class WeddingBudgetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WeddingBudget
-        fields = ('id', 'wedding', 'budget_item', 'estimated_cost', 'actual_cost', 'paid', 'proof_img')
+        fields = ('id', 'wedding', 'budget_item', 'estimated_cost', 'actual_cost', 'paid')
         depth = 1
 

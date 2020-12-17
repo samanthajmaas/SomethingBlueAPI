@@ -34,10 +34,7 @@ class Weddings(ViewSet):
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
-        """Handle GET request for single wedding
-        Returns:
-            Response JSON serialized wedding instance
-        """
+        """Handle GET request for single wedding"""
         try:
             wedding = Wedding.objects.get(pk=pk)
             serializer = WeddingSerializer(wedding, context={'request': request})
@@ -58,15 +55,12 @@ class Weddings(ViewSet):
 
         wedding.save()
 
-        serializer = WeddingSerializer(post, context={'request': request})
+        serializer = WeddingSerializer(wedding, context={'request': request})
         
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
-        """Handle DELETE requests for a wedding
-        Returns:
-            Response -- 200, 404, or 500 status code
-        """
+        """Handle DELETE requests for a wedding"""
         try:
             wedding = Wedding.objects.get(pk=pk)
             wedding.delete()
@@ -78,6 +72,16 @@ class Weddings(ViewSet):
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    @action(methods=['get'], detail=False)
+    def current_brides_wedding(self, request):
+
+        bride = Bride.objects.get(user=request.auth.user)
+        current_wedding = Wedding.objects.get(bride=bride)
+
+        serializer = WeddingSerializer(current_wedding, context={'request': request})
+
+        return Response(serializer.data)
 
 """Basic Serializer for wedding"""
 class WeddingSerializer(serializers.ModelSerializer):

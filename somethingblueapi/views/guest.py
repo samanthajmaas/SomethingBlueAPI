@@ -9,7 +9,6 @@ from somethingblueapi.models import Bride, Wedding, Guest
 class Guests(ViewSet):
     def create(self, request):
         """Handle POST requests for guests"""
-
         bride = Bride.objects.get(user=request.auth.user)
         wedding = Wedding.objects.get(bride=bride)
 

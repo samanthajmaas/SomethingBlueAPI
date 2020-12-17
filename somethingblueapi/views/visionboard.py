@@ -12,7 +12,6 @@ from django.core.files.base import ContentFile
 from somethingblueapi.models import VisionBoard, Wedding, Bride
 
 
-
 class VisionBoards(ViewSet):
     def create(self, request):
         """Handle POST operations for vision board images"""
@@ -24,10 +23,10 @@ class VisionBoards(ViewSet):
 
         board_item.wedding = wedding
 
-        if "v_img" in request.data:
+        if "vb_img" in request.data:
                 format, imgstr = request.data["vb_img"].split(';base64,')
                 ext = format.split('/')[-1]
-                data = ContentFile(base64.b64decode(imgstr), name=f'{vb_img}-{request.data["name"]}.{ext}')
+                data = ContentFile(base64.b64decode(imgstr), name=f'"vb_img"-{uuid.uuid4()}.{ext}')
 
                 board_item.vb_img = data
 
@@ -63,12 +62,9 @@ class VisionBoards(ViewSet):
     
     def list (self, request):
         """Handles get request for images for logged in user"""
-        images = VisionBoard.objects.all()
-
-        wedding = self.request.query_params.get('wedding', None)
-
-        if wedding is not None:
-            images = images.filter(wedding = wedding)
+        bride = Bride.objects.get(user=request.auth.user)
+        wedding = Wedding.objects.get(bride=bride)
+        images = VisionBoard.objects.filter(wedding=wedding)
 
         serializer = VisionBoardSerializer(images, many=True, context={'request': request})
         return Response(serializer.data)

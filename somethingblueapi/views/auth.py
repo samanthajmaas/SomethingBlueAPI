@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.files.base import ContentFile
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from somethingblueapi.models import Bride
+from somethingblueapi.models import Bride, Wedding, ChecklistItem, WeddingChecklist, BudgetItem, WeddingBudget
 
 @csrf_exempt
 def login_user(request):
@@ -31,7 +31,7 @@ def login_user(request):
         # If authentication was successful, respond with true and the users token
         if authenticated_user is not None:
             token = Token.objects.get(user=authenticated_user)
-            rare_user = RareUser.objects.get(user=authenticated_user)
+            bride = Bride.objects.get(user=authenticated_user)
             data = json.dumps({"valid": True, "token": token.key})
             return HttpResponse(data, content_type='application/json')
 
@@ -69,8 +69,30 @@ def register_user(request):
         profile_image_url = data
     )
 
+    wedding = Wedding.objects.create(
+        bride = bride,
+        event_date = req_body['event_date']
+    )
+
     # save it all to the db
     bride.save()
+    wedding.save()
+
+    default_itmes = ChecklistItem.objects.filter(default=True)
+    for item in default_itmes:
+        items_relationship = WeddingChecklist.objects.create(
+            wedding= wedding,
+            checklist_item= item
+        )
+
+    default_budget_items = BudgetItem.objects.filter(default=True)
+    for budget_item in default_budget_items:
+        budget_relationship = WeddingBudget.objects.create(
+            wedding = wedding,
+            budget_item= budget_item,
+            paid=False
+        )
+    
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)

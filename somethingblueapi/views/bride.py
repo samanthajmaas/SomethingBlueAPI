@@ -68,4 +68,5 @@ class BrideSerializer(serializers.ModelSerializer):
     """JSON serializer for Bride info in profile detail view"""
     class Meta:
         model = Bride
-        fields = ("id", "profile_image_url", "is_current_user")
+        fields = ("id", "profile_image_url", "is_current_user", "user")
+        depth=1
