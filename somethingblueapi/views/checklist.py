@@ -77,9 +77,12 @@ class Checklists(ViewSet):
 
         if request.method == 'PUT':
             item = WeddingChecklist.objects.get(pk=pk)
-            item.completed_date = str(date.today())
-            item.save()
+            if item.completed_date:
+                item.completed_date = None
+            else:
+                item.completed_date = str(date.today())
 
+            item.save()
             serializer = WeddingChecklistSerializer(item, context={'request': request})
             return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
