@@ -29,13 +29,6 @@ class Budgets(ViewSet):
             wedding_budget.budget_item = item
             wedding_budget.estimated_cost = request.data["estimated_cost"]
             wedding_budget.paid = False
-            # if "proof_img" in request.data:
-            #     format, imgstr = request.data["proof_img"].split(';base64,')
-            #     ext = format.split('/')[-1]
-            #     data = ContentFile(base64.b64decode(imgstr), name=f'{proof_img}-{request.data["name"]}.{ext}')
-
-            #     wedding_budget.proof_img = data
-
 
             wedding_budget.save()
             weddingSerializer = WeddingBudgetSerializer(wedding_budget, context={'request': request})
@@ -65,12 +58,7 @@ class Budgets(ViewSet):
         wedding_budget.actual_cost = request.data["actual_cost"]
         if wedding_budget.actual_cost is not None:
             wedding_budget.paid = True
-        # if "proof_img" in request.data:
-        #     format, imgstr = request.data["proof_img"].split(';base64,')
-        #     ext = format.split('/')[-1]
-        #     data = ContentFile(base64.b64decode(imgstr), name=f'{proof_img}-{request.data["name"]}.{ext}')
 
-        #     wedding_budget.proof_img = data
         wedding_budget.save()
         serializer = WeddingBudgetSerializer(wedding_budget, context={'request': request})
         return Response({}, status=status.HTTP_204_NO_CONTENT)
