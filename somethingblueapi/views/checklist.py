@@ -86,7 +86,7 @@ class Checklists(ViewSet):
             serializer = WeddingChecklistSerializer(item, context={'request': request})
             return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
-
+            
 class ChecklistItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChecklistItem

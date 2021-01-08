@@ -11,6 +11,8 @@ import base64
 from django.core.files.base import ContentFile
 from somethingblueapi.models import Bride, Wedding
 from somethingblueapi.views.bride import BrideSerializer
+from datetime import datetime, date
+
 
 
 class Weddings(ViewSet):
@@ -78,6 +80,10 @@ class Weddings(ViewSet):
 
         bride = Bride.objects.get(user=request.auth.user)
         current_wedding = Wedding.objects.get(bride=bride)
+        wedding_date = current_wedding.event_date
+
+        countdown = (wedding_date - date.today())/60/60/24
+        current_wedding.countdown = countdown.seconds
 
         serializer = WeddingSerializer(current_wedding, context={'request': request})
 
@@ -89,5 +95,5 @@ class WeddingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Wedding
-        fields = ('id', 'bride', 'event_date', 'location', 'budget')
+        fields = ('id', 'bride', 'event_date', 'location', 'budget', 'countdown')
         depth = 1
