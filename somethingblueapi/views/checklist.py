@@ -86,6 +86,20 @@ class Checklists(ViewSet):
             serializer = WeddingChecklistSerializer(item, context={'request': request})
             return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
+    @action(methods=['get'], detail=False)
+    def updateList(self, request, pk=None):
+        bride = Bride.objects.get(user=request.auth.user)
+        wedding = Wedding.objects.get(bride=bride)
+
+        checklist = WeddingChecklist.objects.filter(wedding=wedding)
+
+        # index = checklist.index(pk=pk)
+        checklist.insert(1, WeddingChecklist.objects.get(pk=pk))
+
+        serializer = WeddingChecklistSerializer(
+            checklist, many=True, context={'request': request})
+        return Response(serializer.data)
+
             
 class ChecklistItemSerializer(serializers.ModelSerializer):
     class Meta:
